@@ -1,0 +1,283 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #000;
+}
+
+h1 {
+    font-size: 2vw;
+}
+
+h3 {
+    font-size: 1vw;
+    margin-top: 1rem;
+    color: #5c4033;
+    font-weight: 500;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.musicPlayer {
+    background: wheat;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    width: 20vw;
+    aspect-ratio: 9/16;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.player {
+    width: 60%;
+    aspect-ratio: 1/1;
+    background: wheat;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player .circle {
+    width: 70%;
+    aspect-ratio: 1/1;
+    background-image: url(https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MTk3MDMzMTg0MDQ1NTczNDM5/50-best-songs-for-slideshows-of-memories.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 20px solid #000;
+    transition: transform 0.1s linear;
+}
+
+.control {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.control button {
+    width: 60px;
+    aspect-ratio: 1/1;
+    color: #5c4033;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.413);
+    background: wheat;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#prev,
+#next {
+    width: 50px;
+    font-size: 1.3rem;
+}
+
+.progressBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+#songBar {
+    width: 50%;
+    height: 3px;
+    appearance: none;
+
+    track colors will be set through --value using JS
+    background: linear-gradient(to right,
+            #5c4033 var(--value, 0%),
+            #d2b48c var(--value, 0%));
+}
+
+#songBar::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #5c4033;
+    cursor: pointer;
+} */
+
+/* Define Variables for easy theme changing */
+:root {
+    --primary-color: #f77f00; /* A vibrant orange for highlights */
+    --background-color: #121212; /* Dark background */
+    --card-background: #1e1e1e; /* Slightly lighter dark card background */
+    --text-color-primary: #ffffff;
+    --text-color-secondary: #aaaaaa;
+    --shadow-light: rgba(255, 255, 255, 0.05);
+    --shadow-dark: rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: var(--background-color);
+    color: var(--text-color-primary);
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: var(--text-color-secondary);
+    font-weight: 400;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.musicPlayer {
+    background: var(--card-background);
+    padding:1.5rem;
+    border-radius: 24px;
+    width: min(300px, 90vw);
+    aspect-ratio: 9/16;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow:
+        10px 10px 20px var(--shadow-dark),
+        -5px -5px 10px var(--shadow-light);
+}
+
+.player {
+    width: 80%;
+    aspect-ratio: 1/1;
+    background: var(--card-background);
+    border-radius: 50%;
+    box-shadow:
+        inset 5px 5px 10px var(--shadow-dark),
+        inset -5px -5px 10px var(--shadow-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 1rem;
+}
+
+.player .circle {
+    width: 70%;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+}
+
+.progressBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#songBar {
+    flex-grow: 1;
+    height: 3px;
+    appearance: none;
+    border-radius: 3px;
+    background: #444;
+    cursor: pointer;
+}
+
+#songBar {
+    background: linear-gradient(to right,
+                var(--primary-color) var(--value, 0%),
+                #444 var(--value, 0%));
+}
+
+#songBar::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+    cursor: grab;
+}
+
+.time {
+    font-size: 0.75rem;
+    color: var(--text-color-secondary);
+}
+
+.control {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.control button {
+    width: 55px;
+    aspect-ratio: 1/1;
+    color: var(--text-color-primary);
+    font-size: 1.4rem;
+    border-radius: 50%;
+    border: none;
+    background: var(--card-background);
+    cursor: pointer;
+    box-shadow:
+        6px 6px 12px var(--shadow-dark),
+        -3px -3px 6px var(--shadow-light);
+}
+
+.control button:hover {
+    color: var(--primary-color);
+    box-shadow:
+        inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+    transform: scale(0.98);
+}
+
+#prev,
+#next {
+    width: 40px;
+    font-size: 1.1rem;
+    box-shadow:
+        4px 4px 8px var(--shadow-dark),
+        -2px -2px 4px var(--shadow-light);
+}

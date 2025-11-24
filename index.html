@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <section class="musicPlayer">
+                <div class="title">
+                    <h1>Rain On Me</h1>
+                    <h3>Lady Gaga & Ariana Grande</h3>
+                </div>
+                <div class="player">
+                    <div class="circle"></div>
+                </div>
+                <div class="progressBar">
+                    <p id="intialTime">00:00</p>
+                    <input type="range" id="songBar" min="0" max="0" step="0.1" value="0" />
+                    <p id="finalTime">01:23</p>
+                </div>
+                <div class="control">
+                    <button id="prev"><i class="ri-skip-back-fill"></i></button>
+                    <button id="play"><i class="ri-play-fill"></i></button>
+                    <button id="next"><i class="ri-skip-forward-fill"></i></button>
+                </div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
